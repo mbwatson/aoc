@@ -29,6 +29,10 @@ assert.deepEqual(run([2, 3, 0, 3, 99]), [2, 3, 0, 6, 99])
 assert.deepEqual(run([2, 4, 4, 5, 99, 0]), [2, 4, 4, 5, 99, 9801])
 assert.deepEqual(run([1, 1, 1, 4, 99, 5, 6, 0, 99]), [30, 1, 1, 4, 2, 5, 6, 0, 99])
 
+// solution
+
+console.log('--- Day 2: 1202 Program Alarm ---')
+
 // part 1
 
 const program = [input[0], 12, 2, ...input.slice(3, input.length)]

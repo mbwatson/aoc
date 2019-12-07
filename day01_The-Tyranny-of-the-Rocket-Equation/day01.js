@@ -24,6 +24,11 @@ assert(findTotalFuel([12, 14]) === 2 + 2)
 assert(totalFuel(1969) === 966)
 assert(totalFuel(100756) === 50346)
 
+
+// solution
+
+console.log('--- Day 1: The Tyranny of the Rocket Equation ---')
+
 // part 1
 
 console.log(`Part 1: ${ findTotalFuel(input) }`)
