@@ -1,6 +1,6 @@
 const assert = require('assert')
 const fs = require('fs')
-const input = fs.readFileSync('input.txt', 'utf8').split('\n')
+const input = fs.readFileSync('day01.txt', 'utf8').split('\n')
 
 const fuel = mass => Math.max(Math.floor(mass / 3) - 2, 0)
 

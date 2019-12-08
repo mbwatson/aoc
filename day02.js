@@ -1,6 +1,6 @@
 const assert = require('assert')
 const fs = require('fs')
-const input = fs.readFileSync('input.txt', 'utf8').split(',').map(i => +i)
+const input = fs.readFileSync('day02.txt', 'utf8').split(',').map(i => +i)
 
 const run = intcode => {
     for (let i = 0; i < intcode.length; i += 4) {
