@@ -1,6 +1,6 @@
 const assert = require('assert')
 const fs = require('fs')
-const input = fs.readFileSync('day04.txt', 'utf8')
+const input = fs.readFileSync('day06.txt', 'utf8')
 
 // tests
 
@@ -8,7 +8,7 @@ assert(true === true)
 
 // solution
 
-console.log('--- Day 4: Secure Container ---')
+console.log('--- Day 6: ___ ---')
 
 // part 1
 
