@@ -3,8 +3,6 @@ const fs = require('fs')
 const input = fs.readFileSync('day07.txt', 'utf8')
 const run = require('./day05')
 
-console.log(run('3,0,4,0,99',0))
-
 // tests
 
 assert(true === true)
