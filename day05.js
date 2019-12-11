@@ -105,3 +105,7 @@ console.log('Part 2:')
 
 const part2Output = run(inputFile, 5)
 console.log(`Diagnostic code: ${ part2Output }`)
+
+// export
+
+module.exports = run
