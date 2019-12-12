@@ -14,7 +14,7 @@ const parseInstruction = (intcode, position) => {
     })
 }
 
-const run = (intcode, input) => {
+const run = (intcode, inputs) => {
     let position = 0
     let output = []
     const program = intcode.split(',').map(i => +i)
@@ -37,7 +37,8 @@ const run = (intcode, input) => {
                 position += 4
                 break
             case 3:
-                program[program[position + 1]] = input
+                program[program[position + 1]] = inputs[0]
+                inputs = inputs.slice(1)
                 position += 2
                 break
             case 4:
@@ -80,13 +81,13 @@ const run = (intcode, input) => {
 // tests
 
 assert(true === true)
-assert.deepEqual(run('3,0,4,0,99', 1), [1])
-assert.deepEqual(run('3,0,4,0,99', 100), [100])
-assert.deepEqual(run('3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9', 0), [0])
-assert.deepEqual(run('3,3,1105,-1,9,1101,0,0,12,4,12,99,1', 0), [0])
-assert.deepEqual(run('3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9', 1), [1])
-assert.deepEqual(run('3,3,1105,-1,9,1101,0,0,12,4,12,99,1', 1), [1])
-assert.deepEqual(run('3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99', 7), [999])
+assert.deepEqual(run('3,0,4,0,99', [1]), [1])
+assert.deepEqual(run('3,0,4,0,99', [100]), [100])
+assert.deepEqual(run('3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9', [0]), [0])
+assert.deepEqual(run('3,3,1105,-1,9,1101,0,0,12,4,12,99,1', [0]), [0])
+assert.deepEqual(run('3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9', [1]), [1])
+assert.deepEqual(run('3,3,1105,-1,9,1101,0,0,12,4,12,99,1', [1]), [1])
+assert.deepEqual(run('3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99', [7]), [999])
 
 // solution
 
@@ -96,14 +97,14 @@ console.log('--- Day 5: Sunny with a Chance of Asteroids ---')
 
 console.log('Part 1:')
 
-const part1 = run(inputFile, 1)
+const part1 = run(inputFile, [1])
 console.log(`Diagnostic code: ${ part1.slice(-1) }`)
 
 // part 2
 
 console.log('Part 2:')
 
-const part2Output = run(inputFile, 5)
+const part2Output = run(inputFile, [5])
 console.log(`Diagnostic code: ${ part2Output }`)
 
 // export
