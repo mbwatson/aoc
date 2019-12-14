@@ -33,7 +33,31 @@ const maxOutput = (program, inputSignal) => {
     let max = -Infinity
     perms.forEach(perm => {
         const output = runAmplifiers(program, inputSignal, perm)
-        console.log(perm, output)
+        console.log(`${ perm }  ->  ${ output }`)
+        if (output > max) {
+            max = output
+        }
+    })
+    return max
+}
+
+const runAmplifiersLooped = (program, inputSignal, phases) => {
+    let output = inputSignal
+    let index = 0
+    while (output) {
+        output = runProgram(program, [phase, output])[0]
+        console.log(output)
+        index += 1
+    }
+    return output
+}
+
+const maxOutputLooped = (program, inputSignal) => {
+    const perms = permutations([...Array(5).keys()].map(i => i + 5))
+    let max = -Infinity
+    perms.forEach(perm => {
+        const output = runAmplifiersLooped(program, inputSignal, perm)
+        console.log(`${ perm }  ->  ${ output }`)
         if (output > max) {
             max = output
         }
@@ -58,9 +82,15 @@ console.log('--- Day 7: Amplification Circuit ---')
 
 console.log('Part 1:')
 
-const part1 = maxOutput(input, 0)
-console.log(part1)
+// const part1 = maxOutput(input, 0)
+// console.log(part1)
 
 // part 2
 
 console.log('Part 2:')
+
+runAmplifiersLooped(input, 0, [5, 6, 7, 8, 9])
+
+// const part2 = maxOutputLooped(input, 0)
+// console.log(part2)
+
