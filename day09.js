@@ -8,7 +8,7 @@ assert(true === true)
 
 // solution
 
-console.log('--- Day 9: ___ ---')
+console.log('--- Day 9: Sensor Boost ---')
 
 // part 1
 
