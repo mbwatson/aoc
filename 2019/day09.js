@@ -1,5 +1,6 @@
 const assert = require('assert')
 const fs = require('fs')
+const runProgram = require('./day05')
 const input = fs.readFileSync('day09.txt', 'utf8')
 
 // tests

@@ -71,6 +71,9 @@ const run = (intcode, inputs) => {
                 program[program[position + 3]] = (k === l) ? 1 : 0
                 position += 4
                 break
+            case 9:
+                
+                break
             default:
                 break
         }
