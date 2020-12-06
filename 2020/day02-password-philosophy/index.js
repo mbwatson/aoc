@@ -84,6 +84,8 @@ assert(countValidPasswords2(testInput) === 1)
 
 /*----------  SOLUTIONS  ----------*/
 
+console.log('--- Day 2: Password Philosophy ---')
+
 const list = fs.readFileSync('input.txt', 'utf8')
 
 // part 1
